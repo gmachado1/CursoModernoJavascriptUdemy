@@ -3,26 +3,23 @@ const http = require('http')
 
 const getTurma = letra => {
     const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`
-    try {
-        return new Promise((resolve, reject) => {
-            http.get(url, res => {
-                let resultado = ''
-                res.on('data', dados => {
-                    resultado += dados
-                })
 
-                res.on('end', () => {
-                    try {
-                        resolve(JSON.parse(resultado))
-                    } catch (e) {
-                        reject(e)
-                    }
-                })
+    return new Promise((resolve, reject) => {
+        http.get(url, res => {
+            let resultado = ''
+            res.on('data', dados => {
+                resultado += dados
+            })
+
+            res.on('end', () => {
+                try {
+                    resolve(JSON.parse(resultado))
+                } catch (e) {
+                    reject(e)
+                }
             })
         })
-    } catch (error) {
-
-    }
+    })
 }
 
 let nomes = []
@@ -40,10 +37,10 @@ getTurma('A').then(alunos => {
 })
 
 
-Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])
+Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])//,getTurma('D')
     .then(turmas => [].concat(...turmas))
     .then(alunos => alunos.map(aluno => aluno.nome))
     .then(nomes => console.log(nomes))
     .catch(e => console.log(e.message))
 
-getTurma('C').catch(e => console.log(e.message))
+getTurma('D').catch(e => console.log(e.message))
