@@ -10,8 +10,8 @@
             padding:30px 0px
         }
     </style>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <!--link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script-->
 </head>
 <body>
     <header>
@@ -21,7 +21,16 @@
         <a href wm-nav="exercicios/teste.html">00 - Teste</a> | 
         <a href wm-nav="exercicios/temp.html">TEMP</a> | 
         <a href wm-nav="exercicios/textoPuro.html">texto puro</a> | 
-        <a href wm-nav="exercicios/texto1.html">texto 1</a> | 
+        <a href wm-nav="exercicios/texto1.html">01 -texto 1</a> | 
+        <a href wm-nav="exercicios/texto2.html">02 -texto 2</a> | 
+        <a href wm-nav="exercicios/listas.html">03 -listas</a> | 
+        <a href wm-nav="exercicios/listasAninhadas.html">04 -listas aninhadas</a> | 
+        <a href wm-nav="exercicios/links.html">05 -links</a> |
+        <a href wm-nav="exercicios/tabela.html">06 -Tabela</a> | 
+        <a href wm-nav="exercicios/formulario/form.html">07 -Form</a> | 
+        <a href wm-nav="exercicios/imagens.html">08 -Imagem</a> | 
+        <a href wm-nav="exercicios/videos.html">09 -Vídeos</a> | 
+        <a href wm-nav="exercicios/tagsNaoVisuais.html">10 -Tags não visuais</a> |
     </nav>
     <section id="conteudo"></section>
     <footer>
@@ -31,11 +40,13 @@
     <script>
         document.querySelectorAll('[wm-nav]').forEach(link => {
             const conteudo = document.getElementById('conteudo')
-            console.log(link)
+           // console.log(link)
             link.onclick = function(e){
                 e.preventDefault()
-                console.log('ação')
-                fetch(link.getAttribute('wm-nav'))// link.href se não tivesse tag wm-nav//promise sem necessitar do request
+              // console.log('ação')
+                fetch(link.getAttribute('wm-nav'))
+                //link.href se não tivesse tag wm-nav
+                //promise sem necessitar do request
                 .then(resp => resp.text())
                 .then(html => conteudo.innerHTML = html)
             }
