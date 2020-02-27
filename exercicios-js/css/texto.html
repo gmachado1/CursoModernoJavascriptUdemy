@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        /* ... */
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        html {
+            font-size: 28px;
+        }
+
+        div {
+            font-size: 100px;
+        }
+
+        p {
+            /* valores padrões  todos abaixo sao 16px*/
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+            /*pontos*/
+            /* aconselhável valores e unidades relativas */
+            /* unidades absolutas */
+            font-size: 100px;
+            /* tamanho do pixel é relativo */
+            font-size: 72pt;
+            /*pontos*/
+            font-size: 1lin;
+            /*polegada inch*/
+
+            /* unidades relativas */
+            font-size: 2.2em;/*pega o tamanho da fonte no browser e multiplica por 2.2, porem se mudar o tamanho da fonte em uma tag html (ex:div) acima da tag atual (que é <p> ) irá multiplicar por este valor o caso de exemplo multiplica o valor da vib por 2.2
+            font-size: 2.2em; */
+            font-size: 2.2rem;/*pega o tamanho RAIZ da fonte no browser e multiplica por 2.2, porem se mudar o tamanho da fonte em na tag <HTML>   */
+            font-size: 50vh; /*caso do viewport 50%*/
+            font-size: 10vw; /*largura do viewport 10%*/
+
+            font-family: monospace;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Indie Flower', cursive;
+            
+            font-weight: 100; /*bold*/
+            font-style: italic;
+            text-transform: uppercase;
+            /* text-decoration: overline,underline,line-through; */
+            word-spacing: -10px;
+            letter-spacing: 20px;
+            line-height: 1.5em;
+            text-align: center;
+        }
+
+        .botao{
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius:25px;
+        }
+
+        .destaque{
+            color:#ffff;
+            background-color: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active{
+            box-shadow:none;
+        }
+
+        .destaque:hover{
+            background-color:rgb(221, 106, 83);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Que texto
+            <br>legal!!!
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a>
+</body>
+
+</html>

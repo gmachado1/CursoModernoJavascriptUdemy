@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* ... */
+        .cabecalho {
+            width: 100%;
+            height: 10%;
+            background-color: #000;
+
+        }
+
+        .logo {
+            width: 100%;
+            height: 5%;
+            position: relative;
+            display: unset;
+        }
+
+        ul {
+            display: inline-flex;
+        }
+
+        li {
+            text-align: right;
+            list-style-type: none
+        }
+
+        nav {
+            display: contents
+        }
+
+        .menu {
+            /* The side navigation menu */
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 10;
+            /* Stay on top */
+            top: 0;
+            /* Stay at the top */
+            left: 38%;
+            background-color: #111;
+            /* Black*/
+            /* Disable horizontal scroll */
+            padding-top: 10px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .menu a {
+            padding: 0px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: inline;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            padding: 0px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+            display: block;
+            background-color: cadetblue;
+            transition: 0.3s;
+        }
+
+        .selected {
+            padding: 0px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+            display: block;
+            background-color: cadetblue;
+            transition: 0.3s;
+        }
+
+        .div-menu {
+            display: inline;
+        }
+
+        .autenticacao {
+            display: contents;
+        }
+
+        #logo {
+            width: 350px;
+            height: auto;
+        }
+
+        .botao {
+            background-color: red;
+            text-decoration-color: white;
+        }
+
+        @media(max-width:947px) {
+            .autenticacao {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media(min-width:947px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            .autenticacao {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img id="logo" src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <div class="div-menu">
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="#inicio" id='inicio' onclick="teste('inicio')">Início</a>
+                    </li>
+                    <li>
+                        <a href="#cursos" id='curso'  onclick="teste('curso')">Cursos</a>
+                    </li>
+                    <li>
+                        <a href="#sobre" id='sobre'  onclick="teste('sobre')">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#contato" id='contato' onclick="teste('contato')">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        let teste = (nome) => {
+            document.querySelectorAll()
+            let item = document.getElementById(nome)
+            item.classList.add('selected')
+            
+        }
+    </script>
+</body>
+
+</html>
