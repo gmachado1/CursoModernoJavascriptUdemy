@@ -23,6 +23,48 @@
     </div>
     <script>
         // ...
+        function log() {
+            console.log(this) //não poderia ser aerofunction
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        console.log('lista.parentNode.log() = ')
+        lista.parentNode.log()
+        console.log('lista.childNodes.log() = ')
+        lista.childNodes.log()
+
+        const primeiro = lista.firstChild
+        console.log('primeiro.log() = ')
+        primeiro.log()
+        console.log('primeiro.nextSibling.log() = ')
+        primeiro.nextSibling.log()
+
+        const ultimo = lista.lastChild
+        console.log('ultimo.log() = ')
+        ultimo.log()
+        console.log('ultimo.previousSibling.log() = ')
+        ultimo.previousSibling.log()
+
+        console.log('lista.children.log() = ')
+        lista.children.log()
+        console.log('lista.firstElementChild.log() = ')
+        lista.firstElementChild.log()
+        console.log('lista.lastElementChild.log() = ')
+        lista.lastElementChild.log()
+
+        console.log('lista.parentNode.previousElementSibling.log() = ')
+        lista.parentNode.previousElementSibling.log()
+
+        console.log('lista.parentNode.nextElementSibling.log() = ')
+        lista.parentNode.nextElementSibling.log()
+
+        console.log(`documet.querySelectorAll('div ul li').log()`)
+        document.querySelectorAll('div ul li').log()
     </script>
 </body>
 
